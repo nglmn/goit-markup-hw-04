@@ -47,13 +47,16 @@ ul, ol{
     padding-left: 15px; 
     padding-right: 15px;
     margin: 0 auto;
-    /* outline: 1px solid tomato; */
+    outline: 1px solid tomato;
 }
 
 
 
 .header{
     border-bottom: 1px solid #e7e9fc;
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .header-container {
@@ -75,7 +78,6 @@ ul, ol{
     letter-spacing: 0.54px;
     text-transform: uppercase;
     line-height: 1.17;
-    
 }
 .header-name{
     color: #2e2f42;
@@ -86,8 +88,6 @@ ul, ol{
     gap: 40px;
 }
 .header-menu-link{
-    display: flex;
-    flex-direction: column;
     color: #2E2F42;
     font-size: 16px;
     font-weight: 500;
@@ -97,14 +97,6 @@ ul, ol{
 .header-menu-link:hover, 
 .header-menu-link:focus{
     color: #404bbf;
-}
-.header-menu-link:hover::after{
-    content: "";
-    height: 4px;
-    width: 100%;
-    border-bottom: 4px solid #404bbf;
-    border-radius: 50px;
-    position: relative;
 }
 
 .header-address {
@@ -134,12 +126,13 @@ ul, ol{
 
 .solutions{
     background-color: #2E2F42;
-    background-image:linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url('../images/hero_main-min.png');
+    background-image:linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero_main-min.png);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     padding-top: 188px;
     padding-bottom: 188px;
+    max-width: 1440px;
 }
 .solutions-title{
     text-align: center;
@@ -168,6 +161,8 @@ ul, ol{
     border: none;
     background-color:#4D5AE5;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+    /* плавне нажаття нопки */
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .solutions-btn:hover, .solutions-btn:focus{
     background-color: #404BBF;
@@ -199,6 +194,7 @@ ul, ol{
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 8px;
 }
 
 .goals-subtitle{
@@ -208,7 +204,6 @@ ul, ol{
     line-height: 1.2;
     letter-spacing: 0.02em;
     margin-bottom: 8px;
-    margin-top: 8px;
 }
 .goals-descr{
     color: #434455;
@@ -287,7 +282,7 @@ ul, ol{
     display: flex;
     align-items: center;
     justify-content: center;
-    
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-social-icon{
     fill: #F4F4FD;
@@ -350,8 +345,12 @@ ul, ol{
     line-height: 1.5;
     letter-spacing: 0.02em;
 }
-.overlay{
-    padding: 32px 40px 32px;
+.portfolio-image-wrapper{
+    position: relative;
+    overflow: hidden;
+}
+.portfolio-overlay-text{
+    padding: 40px 32px;
     color: #F4F4FD;
     font-size: 16px;
     font-weight: 400;
@@ -369,9 +368,15 @@ ul, ol{
         0.2,
         1);
 }
-.portfolio-list-item:hover .overlay{
-    transform: translateY(0);
+
+.portfolio-list-item:hover{
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 2px 1px rgba(46, 47, 66, 0.08);
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(0%);
 }
+
 
 
 
@@ -382,7 +387,11 @@ ul, ol{
 }
 .footer-container{
     display: flex;
-    gap: 120px;
+    /* gap: 120px; */
+    align-items: baseline
+}
+.footer-info{
+    margin-right: 120px;
 }
 .footer-logo-link{
     display: inline-block;
@@ -408,13 +417,13 @@ ul, ol{
 }
 .footer-social-subtitle{
     color: #FFF;
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 1.5;
-        letter-spacing: 0.02em;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    margin-bottom: 16px;
 }
 .footer-social-list{
-    margin-top: 16px;
     display: flex;
     gap: 16px;
 }
@@ -431,11 +440,14 @@ ul, ol{
     align-items: center;
     justify-content: center;
     border-radius: 50%;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-social-icon{
     fill: #F4F4FD;
 }
 
-.footer-social-link:hover{
+.footer-social-link:hover,
+.footer-social-link:focus,
+.footer-social-link:active{
     background-color:#31D0AA;
 }
