@@ -110,20 +110,22 @@ ul, ol{
     background-color: #404bbf;
     border-radius: 2px;
 } */
+.studio {
+    position: relative;
+    color: #404BBF;
+}
 .studio::after {
     content: '';
     position: absolute;
     left: 0;
     width: 100%;
-    bottom: -1px;
-    bottom: -25px;
+    bottom: -1px; /* ця властивість працює некоректно, не знаю шо з цим робити */
+    /* bottom: -25px; */
     height: 4px;
     background-color: #404bbf;
     border-radius: 2px;
 }
-.studio{
-    color:#404BBF;
-}
+
 .header-menu-link:hover, 
 .header-menu-link:focus{
     color: #404bbf;
