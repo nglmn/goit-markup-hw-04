@@ -101,7 +101,20 @@ ul, ol{
     height: 4px;
     background-color: #404bbf;
     border-radius: 2px;
-    
+}
+.header-menu-list .header-menu-item:nth-child(1) .header-menu-link{
+    color: #404BBF;
+}
+.header-menu-list .header-menu-item:nth-child(1) .header-menu-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: -25px;
+    height: 4px;
+    background-color: #404bbf;
+    border-radius: 2px;
+
 }
 
 .header-menu-link{
@@ -143,6 +156,9 @@ ul, ol{
 
 
 .solutions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #2E2F42;
     background-image:linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office-min.jpg);
     background-repeat: no-repeat;
@@ -150,7 +166,8 @@ ul, ol{
     background-size: cover;
     padding-top: 188px;
     padding-bottom: 188px;
-    /* max-width: 1440px; */
+    max-width: 1440px;
+    margin: 0 auto;
 }
 .solutions-title{
     text-align: center;
